@@ -1,0 +1,26 @@
+{
+  "name": "News Summariser",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Convert news headline to a relevant mini rhyme and summarise news article",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.indianexpress.com/article/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": ["https://*.indianexpress.com/*"]
+    }
+  ],
+  "action": {
+    "default_title": "News Summariser",
+    "default_popup": "popup.html"
+  }
+}
